@@ -1,7 +1,8 @@
 public class MachineGunShipFactory extends ShipFactory {
     @Override
-    protected Ship produceShip() {
+    public Ship produceShip() {
         MachineGunShip machineGunShip = new MachineGunShip();
+        machineGunShip.setName("MachineGun Ship");
         machineGunShip.attackBehaviour = new AttackWithMachineGun();
         machineGunShip.defenceBehaviour = new DefenceNoWay();
         machineGunShip.registerObserver(new HealthStatus());

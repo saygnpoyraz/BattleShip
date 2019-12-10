@@ -1,7 +1,8 @@
 public class BombShipFactory extends ShipFactory {
     @Override
-    protected Ship produceShip() {
+    public Ship produceShip() {
         BombShip bombShip = new BombShip();
+        bombShip.setName("Bomb Ship");
         bombShip.attackBehaviour = new AttackWithBomb();
         bombShip.defenceBehaviour = new DefenceNoWay();
         bombShip.registerObserver(new HealthStatus());

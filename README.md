@@ -1,6 +1,6 @@
 ﻿# BattleShip
-# 5 Design Pattern 
-Singelton
+# 5 Design Pattern
+Iterator
 Observer
 Factory
 Strategy

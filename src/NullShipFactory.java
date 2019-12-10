@@ -2,7 +2,7 @@ public class NullShipFactory extends ShipFactory {
 
 
     @Override
-    protected Ship produceShip() {
+    public Ship produceShip() {
         NullShip nullShip = new NullShip();
         nullShip.attackBehaviour = new AttackNoWay();
         nullShip.defenceBehaviour = new DefenceNoWay();

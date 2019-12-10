@@ -2,8 +2,9 @@ public class SandalFactory extends ShipFactory {
 
 
     @Override
-    protected Ship produceShip() {
+    public Ship produceShip() {
         Sandal sandal = new Sandal();
+        sandal.setName("Sandal");
         sandal.attackBehaviour = new AttackNoWay();
         sandal.defenceBehaviour = new DefenceWithArmor();
         sandal.registerObserver(new HealthStatus());

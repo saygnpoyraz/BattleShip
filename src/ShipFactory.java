@@ -1,5 +1,5 @@
 public abstract class ShipFactory {
 
 
-    protected abstract Ship produceShip();
+    public abstract Ship produceShip();
 }

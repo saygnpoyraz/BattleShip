@@ -1,15 +1,9 @@
 public class GameManager {
-    private static GameManager instance;
     private Board board;
 
 
-    private GameManager(){
+    public GameManager(){
 
-    }
-
-    public static GameManager getInstance(){
-        if(instance == null) instance = new GameManager();
-        return instance;
     }
 
     public void createBoard(){
@@ -21,11 +15,7 @@ public class GameManager {
     }
 
 
-
-
-
-
-
-
-
+    public Board getBoard() {
+        return board;
+    }
 }

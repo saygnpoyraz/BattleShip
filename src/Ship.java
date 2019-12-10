@@ -5,9 +5,10 @@ public abstract class Ship implements Observable {
 
      List<Observer> observers;
 
-     String name;
-     int health;
-     int armor;
+
+     private String name;
+     private int health;
+     private int armor;
 
      AttackBehaviour attackBehaviour;
      DefenceBehaviour defenceBehaviour;
@@ -33,6 +34,15 @@ public abstract class Ship implements Observable {
             observer.update(this);
         }
     }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public void attack(Position position){attackBehaviour.attack(position);}
 
     public void defence(){defenceBehaviour.defence(this);}
