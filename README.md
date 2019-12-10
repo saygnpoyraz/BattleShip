@@ -1,7 +1,8 @@
 ﻿# BattleShip
-# 5 Design Pattern
+# 6 Design Pattern
 Iterator
 Observer
 Factory
 Strategy
 Facade
+Null
