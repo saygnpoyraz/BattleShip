@@ -2,8 +2,10 @@
 public class AttackWithMachineGun implements AttackBehaviour {
     @Override
     public void attack(Position position) {
-        position.getShip().getDamage(3);
+        if (position.getShip() instanceof NullShip) System.out.println("MISSsss");
+        position.getShip().getDamage(2);
         position.getShip().notifyObservers();
-        System.out.println("TA TA TA ");
+        if (!(position.getShip() instanceof NullShip))
+            System.out.println("TA! TA! TA!");
     }
 }

@@ -3,8 +3,10 @@ public class AttackWithBomb implements AttackBehaviour
 
     @Override
     public void attack(Position position) {
-        position.getShip().getDamage(6);
+        if (position.getShip() instanceof  NullShip) System.out.println("MISSsss");
+        position.getShip().getDamage(10);
         position.getShip().notifyObservers();
-        System.out.println("BOMB!!!!");
+        if (!(position.getShip() instanceof NullShip))
+            System.out.println("BOMB!!!");
     }
 }

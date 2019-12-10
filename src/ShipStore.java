@@ -17,7 +17,12 @@ public class ShipStore implements Iterable {
     public void addShips(Ship ship){
         ships.add(ship);
     }
-    
+
+
+    public ArrayList<Ship> getShips() {
+        return ships;
+    }
+
     @Override
     public Iterator iterator() {
         return new ShipIterator(this);

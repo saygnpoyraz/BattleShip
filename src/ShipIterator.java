@@ -9,8 +9,16 @@ public class ShipIterator implements Iterator {
         index = 0;
     }
 
+    public ShipStore getShipStore() {
+        return shipStore;
+    }
+
     public void reset(){
         index = 0;
+    }
+
+    public int getIndex() {
+        return index;
     }
 
     @Override
@@ -23,5 +31,9 @@ public class ShipIterator implements Iterator {
         Ship ship = shipStore.getCharAt(this.index);
         index++;
         return ship;
+    }
+
+    public void removeShip(int index){
+        shipStore.getShips().remove(index);
     }
 }
