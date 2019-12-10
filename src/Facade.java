@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,7 +19,6 @@ public class Facade {
             if (turn == 1){
                 gameManager.printBoard(turn);
                 int selectedShipIndex = 0;
-                char action;
                 System.out.println("PLAYER 1 TURN");
                 boolean checkInput = true;
                 while(checkInput){
@@ -35,8 +33,12 @@ public class Facade {
                         System.out.println("Invalid input please enter a number");
                     }
                 }
-                System.out.println("Choose Your Action\n a for Attack \n d for Defence");
-                action = scanner.next().charAt(0);
+                char action;
+
+                do {
+                    System.out.println("Choose Your Action\n a for Attack \n d for Defence");
+                    action = scanner.next().charAt(0);
+                }while(!(action == 'a' || action == 'd'));
 
                 if (action == 'a'){
                     int x;
@@ -84,8 +86,12 @@ public class Facade {
                         System.out.println("Invalid input please enter a number");
                     }
                 }
-                System.out.println("Choose Your Action\n a for Attack \n d for Defence");
-                action = scanner.next().charAt(0);
+
+                do {
+                    System.out.println("Choose Your Action\n a for Attack \n d for Defence");
+                    action = scanner.next().charAt(0);
+                }while(!(action == 'a' || action == 'd'));
+
 
                 if (action == 'a'){
                     int x;
