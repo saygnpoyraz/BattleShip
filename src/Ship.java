@@ -4,12 +4,20 @@ import java.util.List;
 
 public abstract class Ship implements Observable {
 
+
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+
+
      List<Observer> observers;
      List<Position> positions;
 
      private String name;
      private int health;
      private int armor;
+
+     private boolean isDead = false;
 
      AttackBehaviour attackBehaviour;
      DefenceBehaviour defenceBehaviour;
@@ -45,8 +53,13 @@ public abstract class Ship implements Observable {
         for (Position position:positions) {
             NullShipFactory nullShipFactory = new NullShipFactory();
             NullShip nullShip = (NullShip) nullShipFactory.produceShip();
+            nullShip.setDead(true);
             position.setShip(nullShip);
         }
+    }
+
+    public void setDead(boolean dead) {
+        isDead = dead;
     }
 
     public void setName(String name){
@@ -97,7 +110,30 @@ public abstract class Ship implements Observable {
     }
 
     public boolean isDead(){
-        return health == 0;
+        if (health == 0) isDead = true;
+        return isDead;
+    }
+
+
+
+    public String returnType(){
+
+        String result = "";
+
+        if (this instanceof NullShip){
+            if (isDead) result = ANSI_RED + "x" + ANSI_RESET;
+            else result = "x";
+        }else result = ANSI_BLUE;
+        if (this instanceof Sandal){
+            result =  result + "S" + ANSI_RESET;
+        }
+        if (this instanceof BombShip){
+            result =   result + "B" + ANSI_RESET;
+        }
+        if (this instanceof MachineGunShip){
+            result =   result +"M" + ANSI_RESET;
+        }
+        return result;
     }
 
 }

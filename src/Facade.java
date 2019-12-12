@@ -8,13 +8,27 @@ public class Facade {
 
     public void createGame(){
         gameManager = new GameManager();
-        gameManager.createBoard();
+
+       // gameManager.createBoard();
+
     }
 
     public void startGame(){
         Scanner scanner = new Scanner(System.in);
-        gameManager.setVariables();
-        int turn = 1;
+        while (!gameManager.isGameOver()){
+            System.out.println("PLAYER " + (gameManager.currentPlayer.getId()));
+            gameManager.printBoard();
+            gameManager.getShipInput();
+            gameManager.chooseAction();
+            gameManager.updateShips();
+            gameManager.switchTurn();
+        }
+
+
+
+
+       // gameManager.setVariables();
+/*        int turn = 1;
         while (gameManager.isGameOver() == 0){
             if (turn == 1){
                 gameManager.printBoard(turn);
@@ -119,6 +133,6 @@ public class Facade {
                 System.out.println("PLAYER 1 WON!!!!");
                 break;
             }
-        }
+        }*/
     }
 }
