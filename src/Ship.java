@@ -103,7 +103,7 @@ public abstract class Ship implements Observable {
             health = health + armor - damage;
             armor = 0;
         }
-        if (health < 0 ) {
+        if (health <= 0 ) {
             health = 0;
             System.out.println(name + " is dead!");
         }
