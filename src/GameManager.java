@@ -2,9 +2,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GameManager {
-//    private Board board;
-//    private ShipIterator player1Iterator;
-//    private ShipIterator player2Iterator;
+
     int turn = 1;
     Player player1;
     Player player2;
@@ -23,9 +21,6 @@ public class GameManager {
     public int getTurn(){
         return turn;
     }
-    // public void createBoard(){
-//        board = new Board();
-//    }
 
     public boolean isGameOver(){
         boolean gameOver = false;
@@ -96,32 +91,10 @@ public class GameManager {
         return player1.getPosition(x, y);
     }
 
-//
-//    public Board getBoard() {
-//        return board;
-//    }
-//
-//    public void setVariables(){
-//        player1Iterator = board.getPlayer1Iterator();
-//        player2Iterator = board.getPlayer2Iterator();
-//    }
 
     public void printShips(){
         currentPlayer.printShipMenu();
     }
-
-//    public void printPlayer1Ship(){
-//        while(player1Iterator.hasNext()){
-//            System.out.println(player1Iterator.getIndex() + ": " + player1Iterator.next().getName());
-//        }
-//        player1Iterator.reset();
-//    }
-//    public void printPlayer2Ship(){
-//        while(player2Iterator.hasNext()){
-//            System.out.println(player2Iterator.getIndex() + ": " + player2Iterator.next().getName());
-//        }
-//        player2Iterator.reset();
-//    }
 
 
     public void updateShips()
@@ -129,24 +102,4 @@ public class GameManager {
         if (turn % 2 == 0) player1.updateShips();
         else player2.updateShips();
     }
-
-
-//    public int shipCount(int player){
-//        if (player == 1) return player1Iterator.getShipStore().getSize();
-//        return player2Iterator.getShipStore().getSize();
-//
-//    }
-//
-//    public void getPlayerShip(){
-//
-//    }
-
-//
-//    public Ship getPlayer1Ship(int index){
-//        return player1Iterator.getShipStore().getCharAt(index);
-//    }
-//    public Ship getPlayer2Ship(int index){
-//        return player2Iterator.getShipStore().getCharAt(index);
-//    }
-
 }
