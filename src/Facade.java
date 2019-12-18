@@ -19,5 +19,8 @@ public class Facade {
             gameManager.updateShips();
             gameManager.switchTurn();
         }
+
+
+
     }
 }
