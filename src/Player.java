@@ -72,7 +72,13 @@ public class Player {
 
     public void printShipMenu(){
         while(shipIterator.hasNext()){
-            System.out.println(shipIterator.getIndex() + ": " + shipIterator.next().getName());
+            System.out.print(shipIterator.getIndex());
+            Ship ship = shipIterator.next();
+            System.out.print(": " + ship.getName() + " HP: " + ship.getHealth() + " ARMOR: "  + ship.getArmor() + " POSITION: " );
+            for (int i = 0; i< ship.getPositions().size(); i++){
+                System.out.print(ship.getPositions().get(i));
+            }
+            System.out.println();
         }
         shipIterator.reset();
     }

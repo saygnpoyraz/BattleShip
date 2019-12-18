@@ -45,6 +45,10 @@ public abstract class Ship implements Observable {
         }
     }
 
+    public List<Position> getPositions() {
+        return positions;
+    }
+
     public void addPosition(Position position){
         positions.add(position);
     }
@@ -103,7 +107,7 @@ public abstract class Ship implements Observable {
             health = health + armor - damage;
             armor = 0;
         }
-        if (health <= 0 ) {
+        if (health <= 0 && !(this instanceof NullShip)) {
             health = 0;
             System.out.println(name + " is dead!");
         }

@@ -33,4 +33,9 @@ public class Position {
     public void setShip(Ship ship) {
         this.ship = ship;
     }
+
+    @Override
+    public String toString() {
+        return "[" + x + "," + y + "]";
+    }
 }
